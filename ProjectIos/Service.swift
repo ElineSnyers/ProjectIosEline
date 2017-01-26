@@ -19,7 +19,7 @@ class Service {
     private let session = URLSession(configuration: .ephemeral)
     
     func loadDataTask(completionHandler: @escaping (Result<[City]>) -> Void) -> URLSessionTask {
-        //hier eerst reachablity schrijven
+        
         let task = session.dataTask(with: url) {
             data, response, error in
             

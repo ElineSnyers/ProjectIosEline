@@ -12,8 +12,7 @@ class AttractionsViewController: UIViewController,UISearchResultsUpdating {
     
     override func viewDidLoad() {
      
-        //attractionList = [Attraction(name: "London Eye"),Attraction(name: "Tower")]
-        //self.tableView.reloadData()
+        
         tableView.dataSource = self
         
         filteredData = attractionList
@@ -29,8 +28,8 @@ class AttractionsViewController: UIViewController,UISearchResultsUpdating {
     }
     
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let navigationController = segue.destination as! UINavigationController
-       let attractionViewController = navigationController.topViewController as! AttractionViewController
+       
+       let attractionViewController = segue.destination as! AttractionViewController
         let selectedIndex = tableView.indexPathForSelectedRow!.row
     attractionViewController.attraction = attractionList[selectedIndex]
    }

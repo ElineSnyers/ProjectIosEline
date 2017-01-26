@@ -10,22 +10,17 @@ class CitiesViewController: UIViewController,UISearchResultsUpdating{
     fileprivate var cityList: [City] = []
     private var currentTask: URLSessionTask?
     
-
-    //var cityList = [City(name: "London",attractions: [Attraction(name: "London Eye", photo: "London",description: "This is a rad",latitute: 51.503399, longitude: -0.119519),Attraction(name: "Tower", photo: "London",description:"This is the largste castle",latitute: 51.508530, longitude: -0.076132)], photo: "London"),City(name: "Rome",attractions: [Attraction(name: "Coloseum",photo: "Tower",description:"Famous place where the romans fight",latitute: 41.890251, longitude: 12.492373)], photo: "Tower"),City(name: "Brussel",attractions: [Attraction(name: "Attomium",photo: "Tower",description:"It had 9 bowls",latitute: 50.894854, longitude: 4.341084)],photo:"Tower")]
     var filteredData: [City] = []
     var attraction = [Attraction]()
-    
-    
-    
-   
     
    
     override func viewDidLoad() {
         
+        
     splitViewController!.delegate = self
        collectionView.addSubview(errorView)
        
-       
+      
     collectionView.dataSource = self
         
         searchController = UISearchController(searchResultsController: nil)
@@ -35,7 +30,7 @@ class CitiesViewController: UIViewController,UISearchResultsUpdating{
         searchBarPlaceholder.addSubview(searchController.searchBar)
         automaticallyAdjustsScrollViewInsets = true
         definesPresentationContext = true
-        
+       
         hideErrorView()
         currentTask = Service.shared.loadDataTask {
             result in

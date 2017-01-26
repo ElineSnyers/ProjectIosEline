@@ -42,11 +42,7 @@ class AttractionViewController: UITableViewController,MKMapViewDelegate,CLLocati
     
        
     }
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        if !splitViewController!.isCollapsed {
-            navigationItem.leftBarButtonItem = splitViewController!.displayModeButtonItem
-        }
-    }
+  
     
    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
